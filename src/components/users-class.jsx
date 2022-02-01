@@ -15,7 +15,12 @@ class users extends Component {
 
     render() {
         console.log(this.props.users);
-        return <div>User!</div>;
+        const users = this.props.users.users;
+        return (
+            <div>
+                {users ? users.map((user) => <div key={user.id}>{user.name}</div>) : null}
+            </div>
+        );
     }
 }
 
